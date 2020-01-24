@@ -24,7 +24,6 @@ function convert(base, eval){
   }
   if (divide === 1){
     resultString = divide.toString() + resultString.toString();
-    return resultString;
   }
   if(isNegative){
     resultString = "-" + resultString;
@@ -47,12 +46,13 @@ $(document).ready(function(){
 
     if (baseCountNumber > 62){
       alert("Base is too big!");
+    }else{
+      var result = convert(baseCountNumber, evaluateNumber);
+
+      $(".output").show();
+      $("#newNum").text(result);
     }
 
-    var result = convert(baseCountNumber, evaluateNumber);
-    console.log(result);
 
-    $(".output").show();
-    $("#newNum").text(result);
   })
 })
